@@ -19,6 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!--<script src="indexOf.js"></script>
     <script src="while.js"></script>-->
-    <script src="for.js"></script>
+    <!--<script src="for.js"></script>-->
+    <script src="function.js"></script>
   </body>
 </html>
