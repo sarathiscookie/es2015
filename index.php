@@ -20,6 +20,7 @@
     <!--<script src="indexOf.js"></script>
     <script src="while.js"></script>-->
     <!--<script src="for.js"></script>-->
-    <script src="function.js"></script>
+    <!--<script src="function.js"></script>-->
+    <script src="array.js"></script>
   </body>
 </html>
