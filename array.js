@@ -69,3 +69,9 @@ function sliceArray()
 }
 
 console.log(sliceArray());
+
+/* Length of array */
+console.log('******** Length of array ********');
+
+var array = [12, 13, 14, 15, 16, 17];
+console.log(array.length);
