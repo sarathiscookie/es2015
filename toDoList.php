@@ -12,6 +12,7 @@
 <body>
 <h1>"New": Add a todo</h1>
 <h1>"List": List todo</h1>
+<h1>"Delete": Delete todo</h1>
 <h1>"Quit": Quit</h1>
 <div id="userdetails"></div>
 <!-- Optional JavaScript -->
