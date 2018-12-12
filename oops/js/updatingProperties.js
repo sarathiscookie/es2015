@@ -10,3 +10,4 @@ userData.loggedDate = function() {
 };
 
 console.log(userData.loggedDate());
+console.log(userData.mobile);
