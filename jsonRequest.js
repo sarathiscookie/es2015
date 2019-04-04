@@ -10,5 +10,9 @@ request.send();
 
 request.onload = function() {
     var response = request.response;
-    console.log(response);
 };
+
+function dom()
+{
+    // create dom and append
+}

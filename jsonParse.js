@@ -7,6 +7,6 @@ request.responseType = 'text';
 request.send();
 
 request.onload = function() {
-    var response = JSON.parse(request.response);
+    var response = JSON.parse(request.response); // It convert text to object
     console.log(response);
 };
