@@ -9,10 +9,36 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function() {
-    var response = request.response;
+	var response = request.response;
+	headerFn(response);
 };
 
-function dom()
+/**
+ * @type {sring}
+ */
+var header = document.querySelector('header');
+
+/**
+ * [header description]
+ * @param  {string} response
+ * @return {string}
+ */
+function headerFn(response)
 {
-    // create dom and append
+	var h1 = document.createElement('h1');
+	h1.textContent = response['squadName'];
+	header.appendChild(h1);
+
+	var paragraph = document.createElement('p');
+	paragraph.textContent = 'Hometown: '+ response.homeTown +' Formed: '+ response.formed; 
+	header.appendChild(paragraph);
+}
+
+/**
+ * [body description]
+ * @return {[type]} [description]
+ */
+function bodyFn()
+{
+
 }

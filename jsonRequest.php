@@ -5,7 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<header>
+</header>
 
+<section>
+</section>
 <script src="jsonRequest.js"></script>
 </body>
 </html>
