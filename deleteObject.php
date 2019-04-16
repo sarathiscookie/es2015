@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="container">
-	<h1>Delete Objects</h1>
+	<h1>Delete Obje</h1>
 </div>
 <script src="deleteObject.js?v=<?php echo date('YmdHis'); ?>"></script>
 </body>
