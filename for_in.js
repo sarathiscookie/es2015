@@ -1,13 +1,8 @@
-var car = {
-	'make': 'Ford',
-	'model': 'Mustang',
-};
-car.engine = 'Patrol';
+var arr = [3, 5, 7];
 
-var result = '';
+arr.engine = 'Hello';
 
-for (i in car) {
-	result += i +  ':' + car[i] +' ';
+for(i in arr) {
+	console.log(i);
 }
 
-console.log(result);
