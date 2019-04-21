@@ -38,7 +38,7 @@ function updateRecords(id, prop, value) {
             collection[id][prop]=[value];
         }
     }
-    else if (value!==""){
+    else if (value !== ""){
         collection[id][prop] = value;
     }
     else {

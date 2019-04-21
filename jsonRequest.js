@@ -1,4 +1,4 @@
-var url = 'http://localhost/es2015/json/data.json';
+var url = 'https://localhost/es2015/json/data.json';
 
 var request = new XMLHttpRequest();
 
