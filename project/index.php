@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="right">
-			<form action="#">
+			<form action="#" method="post">
 				<label for="company">Company</label>
 				<input type="text" id="company" name="company" placeholder="Your company..">
 
@@ -28,7 +28,7 @@
 					<option value="usa">USA</option>
 				</select>
 
-				<button class="button button3 green">Create Customer</button>
+				<button class="button button3 green createCustomer">Create Customer</button>
 			</form>
 		</div>
 		
