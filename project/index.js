@@ -5,6 +5,8 @@
 	console.log(company + contact + country);
 }*/
 const button = document.querySelector('.createCustomer');
+let i = 1;
+
 button.onclick = function(e) {
 	e.preventDefault(); 
 	//debugger;
@@ -12,7 +14,8 @@ button.onclick = function(e) {
 	const contact = document.querySelector('#contact').value;
 	const country = document.querySelector('#country').value;
 	const status  = 1;
-	appendValues();
+	let increment = i++
+	console.log(appendValues(company, contact, country, status, increment)); // Html is showing correctly on console
 }
 
 /**
@@ -23,9 +26,9 @@ button.onclick = function(e) {
  * @param  {integer} status
  * @return {string}
  */
-function appendValues(company, contact, country, status)
+function appendValues(company, contact, country, status, increment)
 {
-	const html = '<tr id="tableRow">'+
+	let html = '<tr id="tableRow" class="row_'+increment+'">'+
 	'<td>'+company+'</td>'+
 	'<td>'+contact+'</td>'+
 	'<td>'+country+'</td>'+
@@ -33,6 +36,7 @@ function appendValues(company, contact, country, status)
 	'<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>'+
 	'</tr>';
 
+	return html;
 }
 
 /**
@@ -42,6 +46,7 @@ function appendValues(company, contact, country, status)
  */
 function customerStatus(status)
 {
+	const buttonStatusColor = '';
 	if (status === 1){
 		const buttonStatusColor = '<button class="button button1 green">Enabled</button>';
 	}
@@ -51,6 +56,5 @@ function customerStatus(status)
 
 	return buttonStatusColor;
 }
-
 
 
