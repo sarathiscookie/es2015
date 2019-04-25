@@ -36,6 +36,7 @@
 			<table id="customers">
 				<thead>
 					<tr>
+						<th>Id</th>
 						<th>Company</th>
 						<th>Contact</th>
 						<th>Country</th>
@@ -44,15 +45,7 @@
 					</tr>
 				</thead>
 				
-				<tbody id="tbody">
-					<!-- <tr id="tableRow">
-						<td>Alfreds Futterkiste</td>
-						<td>Maria Anders</td>
-						<td>Germany</td>
-						<td><button class="button button1 green">Enabled</button> <button class="button button1 red">Disabled</button></td>
-						<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>
-					</tr> -->
-				</tbody>
+				<tbody id="tbody"></tbody>
 			</table>
 		</div>
 		
