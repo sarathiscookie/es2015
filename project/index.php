@@ -34,21 +34,25 @@
 		
 		<div>
 			<table id="customers">
-				<tr>
-					<th>Company</th>
-					<th>Contact</th>
-					<th>Country</th>
-					<th>Status</th>
-					<th>Action</th>
-				</tr>
-
-				<!-- <tr id="tableRow">
-					<td>Alfreds Futterkiste</td>
-					<td>Maria Anders</td>
-					<td>Germany</td>
-					<td><button class="button button1 green">Enabled</button> <button class="button button1 red">Disabled</button></td>
-					<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>
-				</tr> -->
+				<thead>
+					<tr>
+						<th>Company</th>
+						<th>Contact</th>
+						<th>Country</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				
+				<tbody id="tbody">
+					<!-- <tr id="tableRow">
+						<td>Alfreds Futterkiste</td>
+						<td>Maria Anders</td>
+						<td>Germany</td>
+						<td><button class="button button1 green">Enabled</button> <button class="button button1 red">Disabled</button></td>
+						<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>
+					</tr> -->
+				</tbody>
 			</table>
 		</div>
 		

@@ -5,6 +5,7 @@
 	console.log(company + contact + country);
 }*/
 const button = document.querySelector('.createCustomer');
+const tbody = document.querySelector('#tbody'); // document.getElementById('tbody')
 let i = 1;
 
 button.onclick = function(e) {
@@ -13,9 +14,16 @@ button.onclick = function(e) {
 	const company = document.querySelector('#company').value;
 	const contact = document.querySelector('#contact').value;
 	const country = document.querySelector('#country').value;
-	const status  = 1;
-	let increment = i++
-	console.log(appendValues(company, contact, country, status, increment)); // Html is showing correctly on console
+	let status  = 1;
+	let increment = i++;
+	const html = appendValues(company, contact, country, status, increment);
+
+	if(company !== '' && contact !== '') {
+		tbody.insertAdjacentHTML('afterbegin', html);
+	}
+	else {
+		alert('Please fill the data');
+	}
 }
 
 /**
@@ -28,7 +36,7 @@ button.onclick = function(e) {
  */
 function appendValues(company, contact, country, status, increment)
 {
-	let html = '<tr id="tableRow" class="row_'+increment+'">'+
+	const html = '<tr id="tableRow" class="row_'+increment+'">'+
 	'<td>'+company+'</td>'+
 	'<td>'+contact+'</td>'+
 	'<td>'+country+'</td>'+
@@ -46,12 +54,12 @@ function appendValues(company, contact, country, status, increment)
  */
 function customerStatus(status)
 {
-	const buttonStatusColor = '';
-	if (status === 1){
-		const buttonStatusColor = '<button class="button button1 green">Enabled</button>';
+	let buttonStatusColor = '';
+	if (status === 1) {
+		buttonStatusColor = '<button class="button button1 green">Enabled</button>';
 	}
 	else {
-		const buttonStatusColor = '<button class="button button1 red">Disabled</button>'; 
+		buttonStatusColor = '<button class="button button1 red">Disabled</button>'; 
 	}
 
 	return buttonStatusColor;
