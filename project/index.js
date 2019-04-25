@@ -14,7 +14,7 @@ button.onclick = function(e) {
 	const company = document.querySelector('#company').value;
 	const contact = document.querySelector('#contact').value;
 	const country = document.querySelector('#country').value;
-	let status  = 1;
+	let status  = 0;
 	let increment = i++;
 	const html = appendValues(company, contact, country, status, increment);
 
@@ -37,6 +37,7 @@ button.onclick = function(e) {
 function appendValues(company, contact, country, status, increment)
 {
 	const html = '<tr id="tableRow" class="row_'+increment+'">'+
+	'<td><input type="checkbox"></td>'+
 	'<td>'+company+'</td>'+
 	'<td>'+contact+'</td>'+
 	'<td>'+country+'</td>'+
@@ -55,14 +56,23 @@ function appendValues(company, contact, country, status, increment)
 function customerStatus(status)
 {
 	let buttonStatusColor = '';
-	if (status === 1) {
-		buttonStatusColor = '<button class="button button1 green">Enabled</button>';
+	if (status === 0) {
+		buttonStatusColor = '<button class="button button1 green enable">Enable</button>';
 	}
 	else {
-		buttonStatusColor = '<button class="button button1 red">Disabled</button>'; 
+		 buttonStatusColor = '<button class="button button1 red" disable>Disable</button>';
 	}
 
 	return buttonStatusColor;
 }
 
-
+/**
+ * Enable or disable customer status
+ * @param  {integer} status    [customer status]
+ * @param  {integer} increment [customer id]
+ * @return {integer}           [description]
+ */
+function enableDisableStatus(status, increment)
+{
+	document.querySelector('.row_'+increment)
+}
