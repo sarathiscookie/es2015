@@ -1,3 +1,5 @@
+//https://medium.com/@etiennerouzeaud/a-simple-crud-application-with-javascript-ebc82f688c59
+
 let app = new function() {
 	const button = document.querySelector('.createCustomer');
 	const tbody = document.querySelector('#tbody'); // document.getElementById('tbody')
@@ -20,11 +22,13 @@ let app = new function() {
     }
 
     this.Enable = function(item) {
-
+    	/*let enable = document.querySelector('.enable');
+    	let data = enable.getAttribute('status');*/
+    	console.log(item.parentNode.id);
     }
 
     this.Disable = function(item) {
-    	
+    	console.log(item);
     }
 
     this.Edit = function(item) {
@@ -46,12 +50,12 @@ let app = new function() {
      */
     function appendValues(company, contact, country, status, increment)
     {
-    	const html = '<tr id="tableRow" class="row_'+increment+'">'+
+    	const html = '<tr id="tableRow">'+
     	'<td><input type="checkbox"></td>'+
     	'<td>'+company+'</td>'+
     	'<td>'+contact+'</td>'+
     	'<td>'+country+'</td>'+
-    	'<td>'+customerStatus(status, increment)+'</td>'+
+    	'<td id="'+status+'">'+customerStatus(status, increment)+'</td>'+
     	'<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>'+
     	'</tr>';
 
@@ -71,7 +75,7 @@ let app = new function() {
     		buttonStatusColor = '<button onclick="app.Enable('+ increment +')" class="button button1 green enable">Enable</button>';
     	}
     	else {
-    		buttonStatusColor = '<button onclick=app.Disable('+ increment +') class="button button1 red" disable>Disable</button>';
+    		buttonStatusColor = '<button onclick=app.Disable('+ increment +') class="button button1 red disable">Disable</button>';
     	}
 
     	return buttonStatusColor;
