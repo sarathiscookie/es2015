@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="right">
-			<form action="#" method="post">
+			<form action="javascript:void(0);" method="post" onsubmit="app.Add()">
 				<label for="company">Company</label>
 				<input type="text" id="company" name="company" placeholder="Your company..">
 
@@ -28,7 +28,7 @@
 					<option value="usa">USA</option>
 				</select>
 
-				<button class="button button3 green createCustomer">Create Customer</button>
+				<input type="submit" class="button button3 green createCustomer" value="Create Customer">
 			</form>
 		</div>
 		
