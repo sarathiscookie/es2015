@@ -21,14 +21,20 @@ let app = new function() {
 		}
     }
 
-    this.Enable = function(item) {
-    	/*let enable = document.querySelector('.enable');
-    	let data = enable.getAttribute('status');*/
-    	console.log(item.parentNode.id);
-    }
+    this.Status = function(item) {
+        const enable = document.querySelector('.enabledisablestatus');
 
-    this.Disable = function(item) {
-    	console.log(item);
+        let status = enable.dataset.status;
+        let color;
+        
+        if(status === '0') {
+            color = 'green';
+            customerStatus(1, item, color);
+        }
+        else {
+            color = 'red';
+            customerStatus(0, item, color);
+        }
     }
 
     this.Edit = function(item) {
@@ -39,48 +45,32 @@ let app = new function() {
     	
     }
 
-    /**
-     * [appendValues description]
-     * @param  {[type]} company   [description]
-     * @param  {[type]} contact   [description]
-     * @param  {[type]} country   [description]
-     * @param  {[type]} status    [description]
-     * @param  {[type]} increment [description]
-     * @return {[type]}           [description]
-     */
-    function appendValues(company, contact, country, status, increment)
-    {
-    	const html = '<tr id="tableRow">'+
-    	'<td><input type="checkbox"></td>'+
-    	'<td>'+company+'</td>'+
-    	'<td>'+contact+'</td>'+
-    	'<td>'+country+'</td>'+
-    	'<td id="'+status+'">'+customerStatus(status, increment)+'</td>'+
-    	'<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>'+
-    	'</tr>';
-
-    	return html;
-    }
-
-    /**
-     * [customerStatus description]
-     * @param  {[type]} status [description]
-     * @return {[type]}        [description]
-     */
-    function customerStatus(status, increment)
-    {
-    	let buttonStatusColor = '';
-
-    	if (status === 0) {
-    		buttonStatusColor = '<button onclick="app.Enable('+ increment +')" class="button button1 green enable">Enable</button>';
-    	}
-    	else {
-    		buttonStatusColor = '<button onclick=app.Disable('+ increment +') class="button button1 red disable">Disable</button>';
-    	}
-
-    	return buttonStatusColor;
-    }
-
-
 }
 
+function appendValues(company, contact, country, status, increment)
+{
+    let color = (status === 0) ? 'red' : 'green';
+    const html = '<tr>'+
+    '<td><input type="checkbox"></td>'+
+    '<td>'+company+'</td>'+
+    '<td>'+contact+'</td>'+
+    '<td>'+country+'</td>'+
+    '<td class="enabledisablestatus" data-status="'+status+'">'+customerStatus(status, increment, color)+'</td>'+
+    '<td><button class="button button3 green">Edit</button> <button class="button button3 red">Delete</button></td>'+
+    '</tr>';
+
+    return html;
+}
+
+function customerStatus(status, increment, color)
+{
+    console.log('status ' + status +' increment: '+ increment +' color: '+ color);
+    let buttonStatusColor = '<button onclick="app.Status('+ increment +')" class="button button1 '+color+'">Enable</button>'; 
+
+    return buttonStatusColor;
+}
+
+
+     
+
+    
