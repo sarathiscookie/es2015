@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Splice</title>
 </head>
 <body>
 	<div class="container">
-		<h1>Splice</h1>
+		<h1>Removing item and taking sum of array elements</h1>
 	</div>
 	<script>
 		function sumOfTen(arr) {

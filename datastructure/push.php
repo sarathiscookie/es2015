@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Push</title>
 </head>
 <body>
 
-<script src="push.js"></script>
+<script>
+	var arrayData = [["jane", 20], ["peter", 30], ["declan", 40]];
+
+	arrayData.push(["maria", 25]);
+
+	console.log(arrayData);
+</script>
 </body>
 </html>

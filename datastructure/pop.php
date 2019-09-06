@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pop</title>
 </head>
 <body>
 
-<script src="pop.js"></script>
+<script>
+	var arrayData = [['peter', 23], ["declan", 45], ["maria", 67]];
+	arrayData.pop();
+	console.log(arrayData);
+</script>
 </body>
 </html>
