@@ -11,7 +11,7 @@
 	<script>
 		function htmlColors(arr)
 		{
-			arr.splice(0, 2, 'voilet', 'brown');
+			arr.splice(0, 2, 'brown', 'magenta');
 			return arr;
 		}
 
