@@ -6,6 +6,11 @@
 </head>
 <body>
 <button>SUBMIT</button>
-<script src="anonymousFunction.js"></script>
+<script>
+	var button = document.querySelector('button');
+	button.onclick = function(){
+		console.log('clicked');
+	};
+</script>
 </body>
 </html>

@@ -6,6 +6,17 @@
 </head>
 <body>
 
-<script src="arrayPushWhileLoop.js"></script>
+<script>
+	var arrayData = [];
+
+var i = 0;
+
+while(i < 5) {
+    arrayData.push(i);
+    i++;
+}
+
+console.log(arrayData);
+</script>
 </body>
 </html>
