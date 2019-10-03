@@ -8,6 +8,15 @@
 <div class="container">
 	<h1>Delete Objects</h1>
 </div>
-<script src="deleteObject.js?v=<?php echo date('YmdHis'); ?>"></script>
+<script>
+	var obj = {
+		"name": "Peter",
+		"age": 35,
+		"country": "de"
+	};
+	delete obj.country;
+
+	console.log(obj);
+</script>
 </body>
 </html>

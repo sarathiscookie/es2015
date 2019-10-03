@@ -6,6 +6,15 @@
 </head>
 <body>
 	
-	<script src="continueStatement.js"></script>
+	<script>
+		var i = 0;
+		while(i < 5) {
+			i++;
+			if(i === 3) {
+				continue;
+			}
+			console.log(i);
+		}
+	</script>
 </body>
 </html>

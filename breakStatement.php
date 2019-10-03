@@ -6,6 +6,13 @@
 </head>
 <body>
 	
-	<script src="breakStatement.js"></script>
+	<script>
+		var j = 0;
+		while(j < 5) {
+			j++;
+			if(j === 3) break;
+			console.log(j);
+		}
+	</script>
 </body>
 </html>

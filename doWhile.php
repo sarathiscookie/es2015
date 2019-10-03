@@ -6,6 +6,16 @@
 </head>
 <body>
 
-<script src="doWhile.js"></script>
+<script>
+	var arrayData = [];
+	var i         = 0;
+
+	do {
+		arrayData.push(i);
+		i++;
+	} while(i < 5);
+
+	console.log(arrayData);
+</script>
 </body>
 </html>
