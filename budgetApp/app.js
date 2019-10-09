@@ -18,9 +18,9 @@ let UIController = (function() {
 	return {
 		getInput: function() {
 			return {
-				type: document.querySelector('.add__type').value,
-				description: document.querySelector('.add__description').value,
-				value: document.querySelector('.add__value').value,
+				type: document.querySelector(DOMStrings.inputType).value,
+				description: document.querySelector(DOMStrings.inputDesc).value,
+				value: document.querySelector(DOMStrings.inputValue).value
 			}
 		},
 
@@ -46,7 +46,7 @@ let controller = (function(budgetCtrl, UICtrl) {
 	};
 	
 
-	document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+	document.querySelector(DOM.inputButton).addEventListener('click', ctrlAddItem);
 
 	document.addEventListener('keypress', function(event) {
 		if(event.keyCode === 13 || event.which === 13) {
