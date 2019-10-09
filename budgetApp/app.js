@@ -8,13 +8,21 @@ let budgetController = (function() {
 //Function for UI
 let UIController = (function() {
 
-	//some code
+	return {
+		getInput: function() {
+			return {
+				type: document.querySelector('.add__type').value,
+				description: document.querySelector('.add__description').value,
+				value: document.querySelector('.add__value').value,
+			}
+		}
+	}
 	
 })();
 
 //function for combine UI and Budget
 let controller = (function(budgetCtrl, UICtrl) {
 
-	//some code
+	console.log(UICtrl.getInput());
 
 })(budgetController, UIController);
