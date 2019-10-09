@@ -34,7 +34,7 @@ let UIController = (function() {
 //function for combine UI and Budget
 let controller = (function(budgetCtrl, UICtrl) {
 
-	//console.log(UICtrl.getDOMstrings());
+	let DOM = UICtrl.getDOMstrings();
 
 	let ctrlAddItem = function() {
 		// 1. Get the field input data
