@@ -1,13 +1,14 @@
 //Function for budget
 let budgetController = (function() {
 
-	//some code
+
 
 })();
 
 //Function for UI
 let UIController = (function() {
 
+	//Declared dom strings in object
 	let DOMStrings = {
 		inputType: '.add__type',
 		inputDesc: '.add__description',
@@ -15,6 +16,7 @@ let UIController = (function() {
 		inputButton: '.add__btn'
 	}
 
+	//To access public
 	return {
 		getInput: function() {
 			return {
@@ -26,9 +28,9 @@ let UIController = (function() {
 
 		getDOMstrings: function() {
 			return DOMStrings;
-		}
-	}
-	
+		} 
+	};
+
 })();
 
 //function for combine UI and Budget
@@ -62,7 +64,6 @@ let controller = (function(budgetCtrl, UICtrl) {
 			setupEventListeners();
 		}
 	};
-
 
 })(budgetController, UIController);
 
