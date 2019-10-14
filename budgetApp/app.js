@@ -1,7 +1,31 @@
 //Function for budget
 let budgetController = (function() {
 
+	//Constructor for expende
+	let Expense = function(id, description, value) {
+		this.type = type;
+		this.description = description;
+		this.value = value;
+	};
 
+	//Constructor for income
+	let Income = function(id, description, value) {
+		this.type = type;
+		this.description = description;
+		this.value = value;
+	};
+
+	//Define strings
+	let data = {
+		allItems: {
+			inc: [],
+			exp: []
+		},
+		totals: {
+			inc: 0,
+			exp: 0
+		}
+	}
 
 })();
 
