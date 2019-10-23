@@ -1,21 +1,21 @@
-//Function for budget
+// Function for budget
 let budgetController = (function() {
 
-	//Constructor for expende
+	// Constructor for expende
 	let Expense = function(type, description, value) {
 		this.type = type;
 		this.description = description;
 		this.value = value;
 	};
 
-	//Constructor for income
+	// Constructor for income
 	let Income = function(type, description, value) {
 		this.type = type;
 		this.description = description;
 		this.value = value;
 	};
 
-	//Define strings
+	// Define strings
 	let data = {
 		allItems: {
 			inc: [],
@@ -30,32 +30,37 @@ let budgetController = (function() {
 	return {
 		addItem: function(type, des, val) {
 
-			let newItem;
+			let newItem, ID;
+
+			// Create ID
+			if(data.allItems[type].length > 0) {
+				ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
+			}
+			else {
+				ID = 0;
+			}
 		
-            //Create new item based on exp or inc type 
+            // Create new item based on exp or inc type 
 			if(type === 'exp') {
-				newItem = new Expense(type, des, val);
+				newItem = new Expense(ID, des, val);
 			} else if(type === 'inc') {
-				newItem = new Income(type, des, val);
+				newItem = new Income(ID, des, val);
 			}
 
-            //Push in to new item
+            // Push in to new item
 			data.allItems[type].push(newItem);
 
 			return newItem;
-		},
-		testing: function() {
-			console.log(data);
 		}
 	};
 
 
 })();
 
-//Function for UI
+// Function for UI
 let UIController = (function() {
 
-	//Declared dom strings in object
+	// Declared dom strings in object
 	let DOMStrings = {
 		inputType: '.add__type',
 		inputDesc: '.add__description',
@@ -63,9 +68,10 @@ let UIController = (function() {
 		inputButton: '.add__btn',
 		incomeList: '.income__list',
 		expensesList: '.expenses__list',
-	}
+		deleteBtn: 'item__delete--btn'
+	};
 
-	//To access public
+	// To access public
 	return {
 		getInput: function() {
 			return {
@@ -84,7 +90,7 @@ let UIController = (function() {
 				element = DOMStrings.expensesList;
 
 				html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div>'+
-			'<div class="right clearfix"><div class="item__value">- %value%</div><div class="item__percentage">21%</div>'+
+			'<div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div>'+
 			'<div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i>'+
 			'</button></div></div></div>';
 			} 
@@ -108,17 +114,17 @@ let UIController = (function() {
 
 		getDOMstrings: function() {
 			return DOMStrings;
-		} 
+		},
 	};
 
 })();
 
-//function for combine UI and Budget
+// function for combine UI and Budget
 let controller = (function(budgetCtrl, UICtrl) {
 
 	let DOM = UICtrl.getDOMstrings();
 
-	//Added event listeners in to a function
+	// Added event listeners in to a function
 	let setupEventListeners = function() {
 		document.querySelector(DOM.inputButton).addEventListener('click', ctrlAddItem);
 
@@ -138,8 +144,9 @@ let controller = (function(budgetCtrl, UICtrl) {
 		newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 		// 3. Add the item to the UI
 		UICtrl.addListItem(newItem, input.type);
-		// 4. Calculate the budget
-		// 5. Display the budget on the UI
+		// 4. Clear fields
+		// 5. Calculate the budget
+		// 6. Display the budget on the UI
 	};
 
 	return {
