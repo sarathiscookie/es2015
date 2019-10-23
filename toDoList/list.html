@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>To do list</title>
+  </head>
+  <body>
+   <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+      <li class="breadcrumb-item active" aria-current="page">To Do List</li>
+    </ol>
+   </nav>
+
+   <div class="col-12">
+    <div class="col-12">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="todo" class="sr-only">Todo</label>
+          <input type="text" class="form-control todo" id="todo" placeholder="todo">
+        </div>
+        <button type="button" class="btn btn-primary mb-2 todosubmit">Submit</button> 
+      </form>
+    </div>
+     
+    <div class="col-6">
+      <button type="submit" class="btn btn-primary mb-2">Delete All</button>
+    </div>
+    <div class="col-6"> 
+      <input class="form-check-input" type="checkbox"> <label class="form-check-label" for="inlineCheckbox1">Check All</label>
+    </div>
+
+    <ul class="list-group">
+      <li class="list-group-item" id="list-1"><input class="form-check-input" type="checkbox"> Cras justo odio <span> &#10060; </span></li>
+      <li class="list-group-item" id="list-2"><input class="form-check-input" type="checkbox"> Dapibus ac facilisis in <span> &#10060; </span></li>
+    </ul>
+  </div>
+
+  <script src="app.js"></script>
+ </body>
+</html>
