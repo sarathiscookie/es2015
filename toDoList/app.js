@@ -34,9 +34,17 @@ let controller = (function(listCTRL, uiCTRL) {
 		console.log(input.toDo);
 	};
 
-	document.querySelector(DOM.inputButton).addEventListener('click', addList);
+    let eventListener = function() {
+    	document.querySelector(DOM.inputButton).addEventListener('click', addList);
+    };
 
-	//document.querySelector(DOM.inputButton).addEventListener('click', ctrlAddItem);
-	
-	
+    return {
+    	init: function() {
+    		console.log('Application started');
+    		return eventListener();
+    	}
+    }
+		
 }) (ListController, UIController);
+
+controller.init();
