@@ -35,12 +35,13 @@ let UIController = (function() {
 				toDo: document.querySelector(DOMstrings.inputToDO).value
 			}
 		},
-		addToDoList: function(obj) {
+		addToDoList: function(obj, id) {
 			let html, newHtml;
 
-			html    = `<li class="list-group-item" id="list-1"><input class="form-check-input" type="checkbox"> %todotxt% <span> &#10060; </span></li>`;
+			html    = `<li class="list-group-item item_count_%todoid%" id="list-1"><input class="form-check-input" type="checkbox"> %todotxt% <span> &#10060; </span></li>`;
 
             newHtml = html.replace("%todotxt%", obj.toDoTxt);
+            newHtml = newHtml.replace("%todoid%", id);
 
             document.querySelector(DOMstrings.listGroup).insertAdjacentHTML('beforeend', newHtml);
 		},
@@ -53,6 +54,8 @@ let UIController = (function() {
 
 let controller = (function(listCTRL, uiCTRL) {
 
+	let id = 0;
+
 	let DOM = uiCTRL.getDOMStrings();
 
 	let addList = function() {
@@ -60,8 +63,9 @@ let controller = (function(listCTRL, uiCTRL) {
 
 		input       = uiCTRL.getInput();
 		newToDoList = listCTRL.addToDoItem(input.toDo);
-		
-		uiCTRL.addToDoList(newToDoList);
+		id += 1;
+
+		uiCTRL.addToDoList(newToDoList, id);
 	};
 
     let eventListener = function() {
