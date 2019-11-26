@@ -1,3 +1,5 @@
+'use strict';
+
 let ListController = (function() {
 
 	let toDoItem = function(toDoTxt) {
@@ -26,7 +28,9 @@ let UIController = (function() {
 	let DOMstrings = {
 		inputToDO: '.todo',
 		inputButton: '.todosubmit',
-		listGroup: '.list-group'
+		listGroup: '.list-group',
+		listGroupItem: '.list-group-item',
+		buttonRemove: '.remove',
 	};
 
 	return {
@@ -38,7 +42,7 @@ let UIController = (function() {
 		addToDoList: function(obj, id) {
 			let html, newHtml;
 
-			html    = `<li class="list-group-item item_count_%todoid%" id="list-1"><input class="form-check-input" type="checkbox"> %todotxt% <span> &#10060; </span></li>`;
+			html    = `<li class="list-group-item item_count_%todoid%" id="list-1"><input class="form-check-input" type="checkbox"> %todotxt% <button type="button" class="btn btn-sm btn-primary remove">Remove</button></li>`;
 
             newHtml = html.replace("%todotxt%", obj.toDoTxt);
             newHtml = newHtml.replace("%todoid%", id);
@@ -70,6 +74,7 @@ let controller = (function(listCTRL, uiCTRL) {
 
     let eventListener = function() {
     	document.querySelector(DOM.inputButton).addEventListener('click', addList);
+    	//document.querySelector(DOM.buttonRemove).parentNode.removeChild(document.querySelector(listGroupItem));
     };
 
     return {
