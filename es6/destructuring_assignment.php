@@ -6,6 +6,22 @@
 </head>
 <body>
 	
-	<script src="destructuring_assignment.js"></script>
+	<script>
+		const AVG_TEMPERATURES = {
+			today: 77.5,
+			tomorrow: 79
+		};
+
+		function getTempOfTmrw(avgTemperatures) {
+			"use strict";
+            
+		    const {today: today, tomorrow: tempOfTomorrow} = avgTemperatures; // change this line
+		    
+		    return tempOfTomorrow;
+        }
+
+        console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+	</script>
+
 </body>
 </html>
