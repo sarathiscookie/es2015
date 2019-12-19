@@ -30,7 +30,7 @@
 
         
         <script>
-        	//Foreach
+        	// Foreach
         	var boxes = document.querySelectorAll('.box');
             var boxArray = Array.prototype.slice.call(boxes);
             boxArray.forEach(function(el) {
