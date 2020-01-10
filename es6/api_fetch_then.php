@@ -20,7 +20,7 @@
                 })
                 .then(data => {
                     const today = data.consolidated_weather[0];
-                    console.log(`Today min temp: ${today.min_temp} and max temp: ${today.max_temp}`);
+                    console.log(`Templerature in ${data.title} min temp: ${today.min_temp} and max temp: ${today.max_temp}`);
                 })
                 .catch(error => console.log(error));
         }
