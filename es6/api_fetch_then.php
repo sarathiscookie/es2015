@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        function getTemprature(woeid) {
+        function getTemperature(woeid) {
             const proxy = 'https://cors-anywhere.herokuapp.com/'; // To void CORS problem
             const url = `https://www.metaweather.com/api/location/${woeid}`;
 
@@ -20,14 +20,14 @@
                 })
                 .then(data => {
                     const today = data.consolidated_weather[0];
-                    console.log(`Templerature in ${data.title} min temp: ${today.min_temp} and max temp: ${today.max_temp}`);
+                    console.log(`Today temperature in ${data.title} min temp: ${today.min_temp} and max temp: ${today.max_temp}`);
                 })
                 .catch(error => console.log(error));
         }
 
         // Passing world earth id.
-        getTemprature(44418);
-        getTemprature(2487956);
+        getTemperature(44418);
+        getTemperature(2487956);
     </script>
 </body>
 
