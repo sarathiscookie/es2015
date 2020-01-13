@@ -1,0 +1,14 @@
+{
+  "name": "foodproject",
+  "version": "1.0.0",
+  "description": "An api food project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarath TS",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.5"
+  }
+}
