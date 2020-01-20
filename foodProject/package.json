@@ -4,11 +4,13 @@
   "description": "An api food project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "author": "Sarath TS",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.41.5"
-  }
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
 }
