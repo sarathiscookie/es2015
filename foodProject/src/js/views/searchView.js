@@ -1,3 +1,3 @@
 export const add = (a, b) => a + b;
 export const mul = (a, b) => a * b;
-export const id = 5;
+export const id = 10;
