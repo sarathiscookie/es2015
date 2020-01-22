@@ -3561,19 +3561,31 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n// Global app controller\n\nvar x = 345;\nconsole.log(\"I imported \".concat(_test__WEBPACK_IMPORTED_MODULE_0__[\"default\"], \" from another module that is test.js. Variable x is \").concat(x));\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _models_Search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/Search */ \"./src/js/models/Search.js\");\n/* harmony import */ var _views_searchView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/searchView */ \"./src/js/views/searchView.js\");\n\n\nconsole.log(_models_Search__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\nconsole.log(\"Imported functions! Addition: \".concat(Object(_views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"add\"])(_views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"id\"], 2), \" and Multiplication: \").concat(Object(_views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"mul\"])(_views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"id\"], 2), \".\"));\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
-/***/ "./src/js/test.js":
-/*!************************!*\
-  !*** ./src/js/test.js ***!
-  \************************/
+/***/ "./src/js/models/Search.js":
+/*!*********************************!*\
+  !*** ./src/js/models/Search.js ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('Imported Modules');\n/* harmony default export */ __webpack_exports__[\"default\"] = (200);\n\n//# sourceURL=webpack:///./src/js/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ('Export Search Module');\n\n//# sourceURL=webpack:///./src/js/models/Search.js?");
+
+/***/ }),
+
+/***/ "./src/js/views/searchView.js":
+/*!************************************!*\
+  !*** ./src/js/views/searchView.js ***!
+  \************************************/
+/*! exports provided: add, mul, id */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"add\", function() { return add; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mul\", function() { return mul; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"id\", function() { return id; });\nvar add = function add(a, b) {\n  return a + b;\n};\nvar mul = function mul(a, b) {\n  return a * b;\n};\nvar id = 5;\n\n//# sourceURL=webpack:///./src/js/views/searchView.js?");
 
 /***/ }),
 
