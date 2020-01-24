@@ -6,8 +6,7 @@ const state = {};
 
 const controlSearch = async () => {
     // 1: Get query from view. 
-    const query = searchView.getInput(); //TODO:get value form view page.
-    console.log(query);
+    const query = searchView.getInput();
 
     if(query) {
         // 2: New search object and add to state. 
