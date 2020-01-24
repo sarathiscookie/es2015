@@ -13,12 +13,15 @@ const controlSearch = async () => {
         state.search = new Search(query);
 
         // 3: Prepare UI for results
+        searchView.clearInput(); // Clear search input.
+    
+        searchView.clearResults(); // Clear search results.
 
         // 4: Search for recipes
         await state.search.getResult();
 
         // 5: Render results on UI
-        console.log(state.search.result);
+        searchView.renderResults(state.search.result); //state.search.result: this.result from model/Search.js
 
     }
 };
