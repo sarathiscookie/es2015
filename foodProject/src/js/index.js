@@ -1,10 +1,11 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements } from './views/base';
+import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
 
 const controlSearch = async () => {
+
     // 1: Get query from view. 
     const query = searchView.getInput();
 
@@ -17,13 +18,16 @@ const controlSearch = async () => {
     
         searchView.clearResults(); // Clear search results.
 
+        renderLoader(elements.searchResult); // Loader rendering
+
         // 4: Search for recipes
         await state.search.getResult();
 
+        clearLoader(); 
         // 5: Render results on UI
-        searchView.renderResults(state.search.result); //state.search.result: this.result from model/Search.js
-
+        searchView.renderResults(state.search.result); // state.search.result: this.result from model/Search.js
     }
+
 };
 
 elements.searchForm.addEventListener('submit', e => {
