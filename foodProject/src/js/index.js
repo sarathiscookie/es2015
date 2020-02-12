@@ -23,9 +23,10 @@ const controlSearch = async () => {
         // 4: Search for recipes
         await state.search.getResult();
 
-        clearLoader(); 
+        clearLoader(); // Loader removing
+
         // 5: Render results on UI
-        searchView.renderResults(state.search.result); // state.search.result: this.result from model/Search.js
+        searchView.renderResults(state.search.result); 
     }
 
 };
@@ -33,4 +34,17 @@ const controlSearch = async () => {
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
+});
+
+elements.searchResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    
+    if(btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+
+        searchView.clearResults(); // Clear search results.
+
+        // Passing page no and rendering results on UI
+        searchView.renderResults(state.search.result, goToPage); 
+    }
 });
