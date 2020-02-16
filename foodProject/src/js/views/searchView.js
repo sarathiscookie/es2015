@@ -14,6 +14,15 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
+// When we select on menu mark as active.
+export const highlightSelected = id => {
+    const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+    resultsArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    });
+    document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
+};
+
 /* Algorithm to limit the title */
 const limitRecipeTitle = (title, limit = 17) => {
 
