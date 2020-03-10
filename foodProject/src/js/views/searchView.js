@@ -24,7 +24,7 @@ export const highlightSelected = id => {
 };
 
 /* Algorithm to limit the title */
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
 
     const newTitle = [];
     if (title.length > limit) {
