@@ -20,6 +20,11 @@ export const renderLike = like => {
                 </figure>
                 <div class="likes__data">
                     <h4 class="likes__name">${limitRecipeTitle(like.title)}</h4>
+                    <button class="likes__delete btn-tiny">
+                        <svg>
+                            <use href="img/icons.svg#icon-circle-with-cross"></use>
+                        </svg>
+                    </button>
                     <p class="likes__author">${like.author}</p>
                 </div>
             </a>
