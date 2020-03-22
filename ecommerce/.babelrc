@@ -1,0 +1,16 @@
+
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "chrome": "58",
+                    "ie": "11"
+                }
+            }
+        ]
+    ]
+}
+
+/*Example environments: chrome, opera, edge, firefox, safari, ie, ios, android, node, electron*/
