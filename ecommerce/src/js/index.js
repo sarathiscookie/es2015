@@ -1,5 +1,29 @@
+"use strict"
 
 import '../css/style.css';
-console.log('Application loaded.....');
+import Orders from './models/Orders';
 
-//http://webservice.rakuten.de/merchants/orders/getOrders?key=d6872f58e1ac5c8af686562c6e882ba4
+const state = {};
+
+const ordersController = async () => {
+
+    // Pass query to models.
+    state.orders = new Orders();
+
+    try {
+        // Get orders
+        await state.orders.getResult();
+
+        // Render results on UI
+        //console.log(state.orders.result);
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+
+/* On page load list orders */
+window/addEventListener('load', () => {
+    ordersController();
+});
