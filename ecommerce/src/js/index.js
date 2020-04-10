@@ -15,7 +15,7 @@ const ordersController = async () => {
         await state.orders.getResult();
 
         // Render results on UI
-        //console.log(state.orders.result);
+        console.log(state.orders.result);
     }
     catch (err) {
         console.log(err);
