@@ -2,6 +2,7 @@
 
 import '../css/style.css';
 import Orders from './models/Orders';
+import * as orderView from './views/orderView';
 
 const state = {};
 
@@ -15,7 +16,14 @@ const ordersController = async () => {
         await state.orders.getResult();
 
         // Render results on UI
-        console.log(state.orders.result);
+        if( state.orders.result.success === '1' ) {
+
+            //console.log(state.orders.result); 
+            console.log(state.orders.result);
+            
+            orderView.renderOrdersResult(state.orders.result.orders.order);
+        }
+        
     }
     catch (err) {
         console.log(err);
