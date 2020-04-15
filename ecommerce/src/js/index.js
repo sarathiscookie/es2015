@@ -8,8 +8,19 @@ const state = {};
 
 const ordersController = async () => {
 
-    // Pass query to models.
-    state.orders = new Orders();
+    // Get search query from view
+    let ordersQuery;
+
+    if( orderView.getOrdersInput() ) {
+        ordersQuery = orderView.getOrdersInput();
+    }
+    else {
+        ordersQuery = '';
+    }
+
+    console.log(ordersQuery);
+    
+    state.orders = new Orders(ordersQuery);
 
     try {
         // Get orders
@@ -17,10 +28,7 @@ const ordersController = async () => {
 
         // Render results on UI
         if( state.orders.result.success === '1' ) {
-
-            //console.log(state.orders.result); 
-            console.log(state.orders.result);
-            
+            //console.log(state.orders.result);
             orderView.renderOrdersResult(state.orders.result.orders.order);
         }
         
