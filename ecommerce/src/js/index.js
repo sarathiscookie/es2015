@@ -3,6 +3,7 @@
 import '../css/style.css';
 import Orders from './models/Orders';
 import * as orderView from './views/orderView';
+import { elements } from './views/base';
 
 const state = {};
 
@@ -11,14 +12,15 @@ const ordersController = async () => {
     // Get search query from view
     let ordersQuery;
 
-    if( orderView.getOrdersInput() ) {
+    if( orderView.getOrdersInput() !== '' ) {
         ordersQuery = orderView.getOrdersInput();
+
+        orderView.clearInput(); // Clear search input.
+        orderView.clearResults(); //Clear search result.
     }
     else {
-        ordersQuery = '';
+        ordersQuery = null;
     }
-
-    console.log(ordersQuery);
     
     state.orders = new Orders(ordersQuery);
 
@@ -40,6 +42,12 @@ const ordersController = async () => {
 
 
 /* On page load list orders */
-window/addEventListener('load', () => {
+window.addEventListener('load', () => {
     ordersController();
 });
+
+/* Searching orders */
+elements.searchOrdersForm.addEventListener('submit', e => {
+    e.preventDefault();
+    ordersController();
+})

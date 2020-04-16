@@ -1,4 +1,5 @@
 export const elements = {
-    responsiveTable: document.querySelector('.table-orders'),
-    searchOrdersInput:document.querySelector('.search-orders')
+    ordersList: document.querySelector('.table-orders'),
+    searchOrdersInput: document.querySelector('.search-orders'),
+    searchOrdersForm: document.querySelector('.searchOrdersSubmitButton')
 }

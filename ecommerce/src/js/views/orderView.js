@@ -1,10 +1,19 @@
 import { elements } from './base';
 
 /* Get value from search box */
-export const getOrdersInput = () => elements.searchOrdersInput.nodeValue;
+export const getOrdersInput = () => elements.searchOrdersInput.value;
+
+/* Clearing search input */
+export const clearInput = () => {
+    elements.searchOrdersInput.value = '';
+}
+
+/* Clearing search input */
+export const clearResults = () => {
+    elements.ordersList.innerHTML = '';
+}
 
 /* Rendering data in to view */
-
 const renderOrders = order => {
     const markup = `
 
@@ -20,7 +29,7 @@ const renderOrders = order => {
 
     `;
 
-    elements.responsiveTable.insertAdjacentHTML('beforeend', markup);
+    elements.ordersList.insertAdjacentHTML('beforeend', markup);
 };
 
 export const renderOrdersResult = orders => {

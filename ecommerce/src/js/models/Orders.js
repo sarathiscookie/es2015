@@ -13,7 +13,7 @@ export default class Orders {
         try {
             let searchOrdersFields;
 
-            if(this.query !== '') {
+            if(this.query !== null) {
                 searchOrdersFields = `&search=${this.query}&search_field=order_no`;
             }
             else {
