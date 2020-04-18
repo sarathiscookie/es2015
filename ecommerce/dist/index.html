@@ -2,43 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <title>Ecommerce Frontend</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Ecommerce Frontend</title>
 </head>
 
 <body>
 
-    <table class="table-auto">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Title</th>
-            <th class="px-4 py-2">Author</th>
-            <th class="px-4 py-2">Views</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border px-4 py-2">Intro to CSS</td>
-            <td class="border px-4 py-2">Adam</td>
-            <td class="border px-4 py-2">858</td>
-          </tr>
-          <tr class="bg-gray-100">
-            <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-            <td class="border px-4 py-2">Adam</td>
-            <td class="border px-4 py-2">112</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">Intro to JavaScript</td>
-            <td class="border px-4 py-2">Chris</td>
-            <td class="border px-4 py-2">1,280</td>
-          </tr>
-        </tbody>
-        
-      </table>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link" href="#">
+                        <span data-feather="file"></span>
+                        Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/tree.html" class="nav-link" href="#">
+                        <span data-feather="shopping-cart"></span>
+                        Tree
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Orders</h1>
+
+          <div class="btn-toolbar mb-2 mb-md-0">
+            
+            <form class="searchOrdersSubmitButton">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="inputPassword2" class="sr-only">Password</label>
+                <input type="search" class="form-control search-orders" id="search" aria-describedby="searching" placeholder="Searching...">
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </form>
+            
+          </div>
+          
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-dark">
+
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Order No</th>
+                <th>Client Id</th>
+                <th>Status</th>
+                <th>ShippingDate</th>
+                <th>Item Id</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody class="table-orders">
+            </tbody>
+
+          </table>
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
 
 <script type="text/javascript" src="js/bundle.js"></script></body>
 
