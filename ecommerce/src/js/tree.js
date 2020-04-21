@@ -1,12 +1,27 @@
 "use strict"
 
 import { elements } from './views/base';
+import * as treeView from './views/treeView';
 
-/* Create tree */
-console.log(elements);
+// Create Tree
+const treeController = () => {
+    // Add loader
+    try{
+
+    }
+    catch (err) {
+        console.log(err);
+        // Clear loader
+    }
+
+    treeView.rendertrees(1);
+}
+
 elements.createTreeForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    console.warn('clicked');
-    
+    // Calling create tree function
+    treeController();
 });
+
+
